@@ -2,4 +2,4 @@
 rickei python project
 
 
-add line 1 for test
+tc2.py --> testing curses lib
