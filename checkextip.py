@@ -15,7 +15,10 @@ request = urllib.request.urlopen(url).read()
 
 print(request)
 print("")
+print("")
+findip = re.compile(r"\d{1,3}\.\d{1,3}\.\d{1,3}.\d{1,3}")
 
-theIP = re.findall(r"\d{1,3}\.\d{1,3}\.\d{1,3}.\d{1,3}", request)
+
+theIP = re.findall(findip, request,1)
 
 print("your IP Address is: ",  theIP)
