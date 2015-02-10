@@ -11,14 +11,11 @@ url = "http://checkip.dyndns.org"
 
 print(url)
 
-request = urllib.request.urlopen(url).read()
+request = urllib.request.urlopen(url).read().decode('utf-8')
 
-print(request)
-print("")
-print("")
-findip = re.compile(r"\d{1,3}\.\d{1,3}\.\d{1,3}.\d{1,3}")
+regxip = re.compile(r'\d{1,3}\.\d{1,3}\.\d{1,3}.\d{1,3}')
 
 
-theIP = re.findall(findip, request,1)
+theIP = re.findall(regxip, request)
 
 print("your IP Address is: ",  theIP)
