@@ -6,7 +6,7 @@ except ImportError:
 
 url = "http://myexternalip.com/raw"
 
-print(url)
+print("checking from : " + url)
 
 myip = urlopen(url).read().decode()
 print(myip)
