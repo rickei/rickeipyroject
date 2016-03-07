@@ -1,14 +1,17 @@
+#!/usr/bin/python
+
 # randomly generate 6 numbers from 1..49 (marksix) 
-
 import random
-a=list(range(1,50))
-b=list(range(0,6))
-random.shuffle(a)
-for i in range(0,6):
-	b[i]=a[i]
 
-b.sort()
-#for i in range(0,6):
-#	print(b[i])
+MAXNUM=49
+drawcount=6
 
-print(b)
+drawpool=list(range(1,MAXNUM+1))
+result=list(range(0,drawcount))
+random.shuffle(drawpool)
+for i in range(0,drawcount):
+	result[i]=drawpool[i]
+
+result.sort()
+
+print(result)
