@@ -46,6 +46,8 @@ while True:
 
     print(resultstr)
     resultstr = ""
+
+print(cell)
 # print(cell_1)
 # print(cell_2)
 # print(cell_3)
