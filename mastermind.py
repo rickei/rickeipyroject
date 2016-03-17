@@ -3,11 +3,13 @@ import random
 
 digit=["1","2","3","4","5","6","7","8","9"]
 random.shuffle(digit)
-
 cell_1=digit[0]
-cell_2=digit[1]
-cell_3=digit[2]
-cell_4=digit[3]
+random.shuffle(digit)
+cell_2=digit[0]
+random.shuffle(digit)
+cell_3=digit[0]
+random.shuffle(digit)
+cell_4=digit[0]
 
 while True:
 
