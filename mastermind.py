@@ -21,7 +21,7 @@ while True:
 	if a==cell_1:
 		print("ok")
 
-#print(cell_1)
+print(cell_1)
 #print(cell_2)
 #print(cell_3)
 #print(cell_4)
