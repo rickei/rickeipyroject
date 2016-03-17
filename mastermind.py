@@ -1,7 +1,7 @@
 import random
 
 digit = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
-resultstr=""
+resultstr = ""
 random.shuffle(digit)
 cell_1 = digit[0]
 random.shuffle(digit)
@@ -45,6 +45,7 @@ while True:
             resultstr += "x"
 
     print(resultstr)
+    resultstr = ""
 # print(cell_1)
 # print(cell_2)
 # print(cell_3)
