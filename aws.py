@@ -8,21 +8,26 @@
 # pip install boto3
 
 
+## change : concat the tuple with '\n' to string and output , for nagios use
+
 import boto3
 	
 client = boto3.client('elb')
 ec2 = boto3.resource('ec2')
+tup=()
+
 
 elb = client.describe_load_balancers(
 	LoadBalancerNames=[
         'your_ELB_Name'
     ]
  )
-print('--------')
+#print('--------')
 
-print(elb["LoadBalancerDescriptions"][0]["DNSName"]) 
+#print(elb["LoadBalancerDescriptions"][0]["DNSName"]) 
+tup=tup+(elb["LoadBalancerDescriptions"][0]["DNSName"],'\n','------------------','\n')
 
-print('--------')
+#print('--------')
 
 instancehealth = client.describe_instance_health(
     LoadBalancerName='elb-estore',
@@ -31,8 +36,11 @@ instancehealth = client.describe_instance_health(
 
 for InstanceStates in instancehealth["InstanceStates"]:
     instance = ec2.Instance(InstanceStates["InstanceId"])
-    print(InstanceStates["InstanceId"], instance.tags[0].get('Value'),InstanceStates["State"], instance.private_ip_address, instance.public_ip_address, instance.state.get('Name'))
+    #print(InstanceStates["InstanceId"], instance.tags[0].get('Value'),InstanceStates["State"], instance.private_ip_address, instance.public_ip_address, instance.state.get('Name'))
+    tup = tup + (InstanceStates["InstanceId"],' ', instance.tags[0]["Value"],' ',InstanceStates["State"],' ', instance.private_ip_address, ' ',instance.public_ip_address,' ', instance.state["Name"],'\n') 
 
 
-print('--------')
+#print('--------')
+s="".join(tup)
 
+print(s)
