@@ -1,3 +1,8 @@
+##
+## read ciscolist.txt
+## format : IP HOSTNAME USER PASSORD ENABLEPASSWORD
+## delimiter : \t (TAB)
+
 import pexpect
 import sys
 import csv
